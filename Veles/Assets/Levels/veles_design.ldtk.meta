@@ -1,0 +1,33 @@
+fileFormatVersion: 2
+guid: befc7632ce20eb6428add67e1472f51b
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: aaa16bfc62c086f4fb45da87b6acf9b1, type: 3}
+  _jsonFile: {fileID: -164016180542632921, guid: befc7632ce20eb6428add67e1472f51b, type: 3}
+  _pixelsPerUnit: 16
+  _atlas: {instanceID: 0}
+  _customLevelPrefab: {instanceID: 0}
+  _deparentInRuntime: 0
+  _intGridValueColorsVisible: 0
+  _useCompositeCollider: 1
+  _createBackgroundColor: 1
+  _intGridValues:
+  - _key: Collision_1
+    _asset: {fileID: 11400000, guid: 6f51846e40d10474480bbbdb38fecba1, type: 2}
+  - _key: IntGrid_1
+    _asset: {instanceID: 0}
+  - _key: IntGrid_2
+    _asset: {instanceID: 0}
+  _entities:
+  - _key: Player
+    _asset: {instanceID: 0}
+  - _key: Enemy
+    _asset: {fileID: 6947977872346061866, guid: 09b9e615c8ec6c143a1f40b14136e6bb, type: 3}
+  _enumGenerate: 0
+  _enumPath: 
+  _enumNamespace: 
