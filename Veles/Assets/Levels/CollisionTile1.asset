@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _colliderType: 2
   _customPhysicsSprite: {fileID: 21300000, guid: edd4b206c40462a4c92529f3606ce170, type: 3}
-  _tilemapTag: Untagged
+  _tilemapTag: Ground
   _tilemapLayerMask: 0
   _physicsMaterial: {fileID: 0}
   _gameObject: {fileID: 0}
