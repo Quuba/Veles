@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class GroundCheck : MonoBehaviour
 {
+    //Unused script
+    
     [SerializeField] private PlayerMovement _playerMovement;
     private bool isGrounded = false;
     private void OnTriggerEnter2D(Collider2D other)
@@ -14,7 +16,7 @@ public class GroundCheck : MonoBehaviour
             isGrounded = true;
             if (!_playerMovement.CanJump)
             {
-                _playerMovement.onGroundTouch();
+                // _playerMovement.OnGroundTouch();
             }
         }
         

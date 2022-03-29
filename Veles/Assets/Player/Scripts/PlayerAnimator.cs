@@ -9,26 +9,62 @@ public class PlayerAnimator : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
-    [SerializeField] private Sprite leftSprite;
-    [SerializeField] private Sprite rightSprite;
-
     private bool isMoving;
+    // [SerializeField] private bool isfalling;
 
     [SerializeField] private Vector2 movingDir;
-    private void Awake()
+
+    //TODO: change set trigger methods to index based search
+    private void OnEnable()
     {
-        // renderer = GetComponent<SpriteRenderer>();
+        PlayerEventManager.onJump += Jump;
+        PlayerEventManager.onTouchGround += GroundTouch;
+        PlayerEventManager.onStartFalling += StartFalling;
+        PlayerEventManager.onWallStuck += WallStuck;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnDisable()
     {
+        PlayerEventManager.onJump -= Jump;
+        PlayerEventManager.onTouchGround -= GroundTouch;
+        PlayerEventManager.onStartFalling -= StartFalling;
+        PlayerEventManager.onWallStuck -= WallStuck;
+    }
+
+    private void Jump(object sender, EventArgs e)
+    {
+        Debug.Log("Jump");
+        SetIsGrounded(false);
+        animator.SetTrigger("JumpTrigger");
+    }
+
+    private void GroundTouch(object sender, EventArgs e)
+    {
+        SetIsGrounded(true);
+    }
+
+    private void StartFalling(object sender, EventArgs e)
+    {
+        SetIsGrounded(false);
+        animator.SetTrigger("FallTrigger");
+    }
+
+    private void WallStuck(object sender, EventArgs e)
+    {
+        animator.SetTrigger("WallStuckTrigger");
+    }
+
+    private void SetIsGrounded(bool state)
+    {
+        animator.SetBool("IsGrounded", state);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector2 movingDir = playerMovement.LastDirection;
+        if (!playerMovement.CanReceiveInput) return; // Todo: can use event here
+        
+        var movingDir = playerMovement.LastDirection;
 
         
         if (movingDir.x > 0)
@@ -39,5 +75,6 @@ public class PlayerAnimator : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
+
     }
 }

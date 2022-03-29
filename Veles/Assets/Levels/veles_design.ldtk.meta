@@ -15,7 +15,7 @@ ScriptedImporter:
   _deparentInRuntime: 0
   _intGridValueColorsVisible: 0
   _useCompositeCollider: 1
-  _createBackgroundColor: 1
+  _createBackgroundColor: 0
   _intGridValues:
   - _key: Collision_1
     _asset: {fileID: 11400000, guid: 6f51846e40d10474480bbbdb38fecba1, type: 2}
@@ -27,6 +27,8 @@ ScriptedImporter:
   - _key: Player
     _asset: {instanceID: 0}
   - _key: Enemy
+    _asset: {fileID: 6947977872346061866, guid: 09b9e615c8ec6c143a1f40b14136e6bb, type: 3}
+  - _key: Door
     _asset: {fileID: 6947977872346061866, guid: 09b9e615c8ec6c143a1f40b14136e6bb, type: 3}
   _enumGenerate: 0
   _enumPath: 
