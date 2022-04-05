@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     // public static PlayerMovement Instance;
 
 
-    [Space(30)] private PlayerControls _playerControls;
+    [Space(30)] private InputActions _inputActions;
 
     [SerializeField] private Rigidbody2D rb;
 
@@ -54,7 +54,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 wallTouchDir; // TODO: to Vector2Int
     [SerializeField] private LayerMask levelCollisionLayer;
 
-    private PlayerControls.BaseActionMapActions actionMap;
+    private InputActions.PlayerActionMapActions actionMap;
 
     public event EventHandler groundTouch;
     public event EventHandler jumpEvent;
@@ -82,9 +82,8 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        _playerControls = new PlayerControls();
-        actionMap = _playerControls.BaseActionMap;
-        // Instance = this;
+        _inputActions = InputController.Instance.inputActions;
+        actionMap = InputController.Instance.playerActionMap;
     }
 
     enum GroundState
@@ -105,15 +104,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private GroundState groundState;
 
-    private void OnEnable()
-    {
-        _playerControls.Enable();
-    }
-
-    private void OnDisable()
-    {
-        _playerControls.Disable();
-    }
+    
 
     void Start()
     {
@@ -166,7 +157,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (groundState == GroundState.InAir && jumpState != JumpState.Rise)
             {
-                Debug.Log("db1");
+                // Debug.Log("db1");
 
                 //First frame after landing
                 if (rb.velocity.y <= 0.01f)

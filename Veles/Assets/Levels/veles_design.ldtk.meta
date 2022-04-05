@@ -29,7 +29,7 @@ ScriptedImporter:
   - _key: Enemy
     _asset: {fileID: 6947977872346061866, guid: 09b9e615c8ec6c143a1f40b14136e6bb, type: 3}
   - _key: Door
-    _asset: {fileID: 6947977872346061866, guid: 09b9e615c8ec6c143a1f40b14136e6bb, type: 3}
+    _asset: {fileID: 1651466710436229254, guid: 02b1c5067c3c7f844b4147234e578fb8, type: 3}
   _enumGenerate: 0
   _enumPath: 
   _enumNamespace: 
